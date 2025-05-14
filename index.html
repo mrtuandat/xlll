@@ -17,7 +17,6 @@
       flex-direction: column;
       text-align: center;
       animation: fadeIn 2s ease-in;
-      overflow: hidden;
     }
 
     .container {
@@ -27,7 +26,6 @@
       box-shadow: 0 0 25px rgba(255, 182, 193, 0.3);
       max-width: 500px;
       animation: fadeIn 2s ease-in-out;
-      position: relative;
     }
 
     .emoji {
@@ -48,7 +46,7 @@
     button {
       background-color: #ffccdd;
       border: none;
-      color: white;
+      color: #fff;
       padding: 12px 24px;
       border-radius: 30px;
       font-size: 1rem;
@@ -56,7 +54,6 @@
       transition: background-color 0.3s;
       animation: pulse 1.5s infinite;
       margin: 0 10px;
-      position: relative;
     }
 
     button:hover {
@@ -94,14 +91,12 @@
     });
 
     document.getElementById('noBtn').addEventListener('click', () => {
-      const elems = document.querySelectorAll('.container, .container *');
-      elems.forEach(el => {
-        el.style.position = 'absolute';
-        el.style.left = Math.random() * (window.innerWidth - el.clientWidth) + 'px';
-        el.style.top = Math.random() * (window.innerHeight - el.clientHeight) + 'px';
-        el.style.transform = `rotate(${Math.random() * 360}deg)`;
-      });
-      document.body.style.backgroundColor = '#ffeef8';
+      // Khi nhấn "Không", đổi sang màu hồng cánh sen nhẹ nhàng
+      document.body.style.backgroundColor = '#f2b8d1';
+      // Cập nhật màu nền của container
+      document.querySelector('.container').style.backgroundColor = '#fce4ef';
+      // Thông báo nhỏ
+      alert('Dù em không đồng ý, anh vẫn muốn được bù đắp và yêu em nhiều hơn! ❤️');
     });
   </script>
 </body>
