@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Xin Lỗi nha 😢</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Xin lỗi nha 😢</title>
   <style>
     body {
-      background-color: #ffe6f0;
+      background-color: #fff0f5; /* Hồng nhạt */
       font-family: 'Comic Sans MS', cursive, sans-serif;
-      color: #d63384;
+      color: #cc6699;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -16,14 +16,16 @@
       margin: 0;
       flex-direction: column;
       text-align: center;
+      animation: fadeIn 2s ease-in;
     }
 
     .container {
-      background-color: #fff0f5;
+      background-color: #ffeaf4;
       padding: 40px;
       border-radius: 20px;
-      box-shadow: 0 0 20px rgba(255, 182, 193, 0.6);
+      box-shadow: 0 0 25px rgba(255, 182, 193, 0.5);
       max-width: 500px;
+      animation: fadeIn 2s ease-in-out;
     }
 
     h1 {
@@ -42,7 +44,7 @@
     }
 
     button {
-      background-color: #ff66b2;
+      background-color: #ff99cc;
       border: none;
       color: white;
       padding: 12px 24px;
@@ -50,19 +52,33 @@
       font-size: 1rem;
       cursor: pointer;
       transition: background-color 0.3s;
+      animation: pulse 1.5s infinite;
     }
 
     button:hover {
-      background-color: #ff3385;
+      background-color: #ff66a3;
+    }
+
+    /* Hiệu ứng xuất hiện */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Hiệu ứng nhịp tim nhẹ */
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="emoji">🥺💔</div>
+    <div class="emoji">🥺</div>
     <h1>Cho anh xin lỗi nha...</h1>
-    <p>Anh biết mình đã làm em buồn, và anh thật lòng xin lỗi... 💞</p>
-    <button onclick="alert('Em tha lỗi cho anh nhé 🥹👉👈')">Tha lỗi cho anh được không? 💗</button>
+    <p>Anh biết mình làm em buồn... Anh thật sự hối hận và mong em tha lỗi 😔</p>
+    <button onclick="alert('Em tha lỗi cho anh rồi đúng không...? 🥹👉👈')">Có thể tha lỗi cho anh không...? 🩷</button>
   </div>
 </body>
 </html>
