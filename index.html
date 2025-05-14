@@ -6,9 +6,9 @@
   <title>Xin lỗi nha 😢</title>
   <style>
     body {
-      background-color: #fff0f5; /* Hồng nhạt */
+      background-color: #fff5fa; /* Hồng rất nhạt */
       font-family: 'Comic Sans MS', cursive, sans-serif;
-      color: #cc6699;
+      color: #bb5599;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -17,15 +17,22 @@
       flex-direction: column;
       text-align: center;
       animation: fadeIn 2s ease-in;
+      overflow: hidden;
     }
 
     .container {
-      background-color: #ffeaf4;
+      background-color: #fff0f8;
       padding: 40px;
       border-radius: 20px;
-      box-shadow: 0 0 25px rgba(255, 182, 193, 0.5);
+      box-shadow: 0 0 25px rgba(255, 182, 193, 0.3);
       max-width: 500px;
       animation: fadeIn 2s ease-in-out;
+      position: relative;
+    }
+
+    .emoji {
+      font-size: 3rem;
+      margin-bottom: 20px;
     }
 
     h1 {
@@ -38,13 +45,8 @@
       margin-bottom: 20px;
     }
 
-    .emoji {
-      font-size: 3rem;
-      margin-bottom: 20px;
-    }
-
     button {
-      background-color: #ff99cc;
+      background-color: #ffccdd;
       border: none;
       color: white;
       padding: 12px 24px;
@@ -53,10 +55,12 @@
       cursor: pointer;
       transition: background-color 0.3s;
       animation: pulse 1.5s infinite;
+      margin: 0 10px;
+      position: relative;
     }
 
     button:hover {
-      background-color: #ff66a3;
+      background-color: #ffbbcc;
     }
 
     /* Hiệu ứng xuất hiện */
@@ -78,7 +82,27 @@
     <div class="emoji">🥺</div>
     <h1>Cho anh xin lỗi nha...</h1>
     <p>Anh biết mình làm em buồn... Anh thật sự hối hận và mong em tha lỗi 😔</p>
-    <button onclick="alert('Em tha lỗi cho anh rồi đúng không...? 🥹👉👈')">Có thể tha lỗi cho anh không...? 🩷</button>
+    <div>
+      <button id="yesBtn">Tha lỗi cho anh được không? 🩷</button>
+      <button id="noBtn">Không... 😢</button>
+    </div>
   </div>
+
+  <script>
+    document.getElementById('yesBtn').addEventListener('click', () => {
+      alert('Em tha lỗi cho anh rồi đúng không...? 🥹👉👈');
+    });
+
+    document.getElementById('noBtn').addEventListener('click', () => {
+      const elems = document.querySelectorAll('.container, .container *');
+      elems.forEach(el => {
+        el.style.position = 'absolute';
+        el.style.left = Math.random() * (window.innerWidth - el.clientWidth) + 'px';
+        el.style.top = Math.random() * (window.innerHeight - el.clientHeight) + 'px';
+        el.style.transform = `rotate(${Math.random() * 360}deg)`;
+      });
+      document.body.style.backgroundColor = '#ffeef8';
+    });
+  </script>
 </body>
 </html>
